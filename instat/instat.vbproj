@@ -317,6 +317,12 @@
     <Compile Include="dlgLocatingPointsInShapeFile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dlgMyFirstDialog.Designer.vb">
+      <DependentUpon>dlgMyFirstDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMyFirstDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dlgOtherRosePlots.Designer.vb">
       <DependentUpon>dlgOtherRosePlots.vb</DependentUpon>
     </Compile>
@@ -2811,6 +2817,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlgLocatingPointsInShapeFile.resx">
       <DependentUpon>dlgLocatingPointsInShapeFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMyFirstDialog.resx">
+      <DependentUpon>dlgMyFirstDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgOtherRosePlots.resx">
       <DependentUpon>dlgOtherRosePlots.vb</DependentUpon>
