@@ -23,34 +23,35 @@ Partial Class dlgBarChartDesign
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ucrBase = New instat.ucrButtons()
-        Me.UcrColors1 = New instat.ucrColors()
+        Me.ucrColors = New instat.ucrColors()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ucrDataFrame = New instat.ucrDataFrame()
         Me.ucrDataSelectionVariables = New instat.ucrDataSelection()
         Me.lblColour = New System.Windows.Forms.Label()
-        Me.rdoSimpleBarChart = New instat.ucrRadio()
-        Me.ucr = New instat.ucrRadio()
-        Me.UcrRadio3 = New instat.ucrRadio()
+        Me.rdoSimple = New instat.ucrRadio()
+        Me.rdoClustered = New instat.ucrRadio()
+        Me.rdoStacked = New instat.ucrRadio()
         Me.grpBarChartType = New System.Windows.Forms.GroupBox()
         Me.grpBarChartType.SuspendLayout()
         Me.SuspendLayout()
         '
         'ucrBase
         '
-        Me.ucrBase.Location = New System.Drawing.Point(12, 289)
+        Me.ucrBase.Location = New System.Drawing.Point(10, 288)
         Me.ucrBase.Name = "ucrBase"
         Me.ucrBase.Size = New System.Drawing.Size(414, 62)
         Me.ucrBase.TabIndex = 0
+        Me.ucrBase.TabStop = False
         '
-        'UcrColors1
+        'ucrColors
         '
-        Me.UcrColors1.AddQuotesIfUnrecognised = True
-        Me.UcrColors1.GetSetSelectedIndex = -1
-        Me.UcrColors1.IsReadOnly = False
-        Me.UcrColors1.Location = New System.Drawing.Point(203, 224)
-        Me.UcrColors1.Name = "UcrColors1"
-        Me.UcrColors1.Size = New System.Drawing.Size(137, 21)
-        Me.UcrColors1.TabIndex = 6
+        Me.ucrColors.AddQuotesIfUnrecognised = True
+        Me.ucrColors.GetSetSelectedIndex = -1
+        Me.ucrColors.IsReadOnly = False
+        Me.ucrColors.Location = New System.Drawing.Point(203, 224)
+        Me.ucrColors.Name = "ucrColors"
+        Me.ucrColors.Size = New System.Drawing.Size(137, 21)
+        Me.ucrColors.TabIndex = 6
         '
         'Label1
         '
@@ -87,33 +88,33 @@ Partial Class dlgBarChartDesign
         Me.lblColour.TabIndex = 10
         Me.lblColour.Text = "Colour"
         '
-        'rdoSimpleBarChart
+        'rdoSimple
         '
-        Me.rdoSimpleBarChart.Location = New System.Drawing.Point(6, 19)
-        Me.rdoSimpleBarChart.Name = "rdoSimpleBarChart"
-        Me.rdoSimpleBarChart.Size = New System.Drawing.Size(100, 20)
-        Me.rdoSimpleBarChart.TabIndex = 11
+        Me.rdoSimple.Location = New System.Drawing.Point(6, 19)
+        Me.rdoSimple.Name = "rdoSimple"
+        Me.rdoSimple.Size = New System.Drawing.Size(100, 20)
+        Me.rdoSimple.TabIndex = 11
         '
-        'ucr
+        'rdoClustered
         '
-        Me.ucr.Location = New System.Drawing.Point(6, 41)
-        Me.ucr.Name = "ucr"
-        Me.ucr.Size = New System.Drawing.Size(100, 20)
-        Me.ucr.TabIndex = 12
+        Me.rdoClustered.Location = New System.Drawing.Point(6, 42)
+        Me.rdoClustered.Name = "rdoClustered"
+        Me.rdoClustered.Size = New System.Drawing.Size(100, 20)
+        Me.rdoClustered.TabIndex = 12
         '
-        'UcrRadio3
+        'rdoStacked
         '
-        Me.UcrRadio3.Location = New System.Drawing.Point(6, 67)
-        Me.UcrRadio3.Name = "UcrRadio3"
-        Me.UcrRadio3.Size = New System.Drawing.Size(100, 20)
-        Me.UcrRadio3.TabIndex = 13
+        Me.rdoStacked.Location = New System.Drawing.Point(6, 67)
+        Me.rdoStacked.Name = "rdoStacked"
+        Me.rdoStacked.Size = New System.Drawing.Size(100, 20)
+        Me.rdoStacked.TabIndex = 13
         '
         'grpBarChartType
         '
-        Me.grpBarChartType.Controls.Add(Me.rdoSimpleBarChart)
-        Me.grpBarChartType.Controls.Add(Me.UcrRadio3)
-        Me.grpBarChartType.Controls.Add(Me.ucr)
-        Me.grpBarChartType.Location = New System.Drawing.Point(12, 183)
+        Me.grpBarChartType.Controls.Add(Me.rdoSimple)
+        Me.grpBarChartType.Controls.Add(Me.rdoStacked)
+        Me.grpBarChartType.Controls.Add(Me.rdoClustered)
+        Me.grpBarChartType.Location = New System.Drawing.Point(12, 182)
         Me.grpBarChartType.Name = "grpBarChartType"
         Me.grpBarChartType.Size = New System.Drawing.Size(148, 100)
         Me.grpBarChartType.TabIndex = 14
@@ -124,13 +125,13 @@ Partial Class dlgBarChartDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 353)
+        Me.ClientSize = New System.Drawing.Size(424, 353)
         Me.Controls.Add(Me.grpBarChartType)
         Me.Controls.Add(Me.lblColour)
         Me.Controls.Add(Me.ucrDataSelectionVariables)
         Me.Controls.Add(Me.ucrDataFrame)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.UcrColors1)
+        Me.Controls.Add(Me.ucrColors)
         Me.Controls.Add(Me.ucrBase)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
@@ -145,13 +146,13 @@ Partial Class dlgBarChartDesign
     End Sub
 
     Friend WithEvents ucrBase As ucrButtons
-    Friend WithEvents UcrColors1 As ucrColors
+    Friend WithEvents ucrColors As ucrColors
     Friend WithEvents Label1 As Label
     Friend WithEvents ucrDataFrame As ucrDataFrame
     Friend WithEvents ucrDataSelectionVariables As ucrDataSelection
     Friend WithEvents lblColour As Label
-    Friend WithEvents rdoSimpleBarChart As ucrRadio
-    Friend WithEvents ucr As ucrRadio
-    Friend WithEvents UcrRadio3 As ucrRadio
+    Friend WithEvents rdoSimple As ucrRadio
+    Friend WithEvents rdoClustered As ucrRadio
+    Friend WithEvents rdoStacked As ucrRadio
     Friend WithEvents grpBarChartType As GroupBox
 End Class
