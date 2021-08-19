@@ -2408,4 +2408,7 @@ Public Class frmMain
         dlgPasteSpecial.ShowDialog()
     End Sub
 
+    Private Sub BarChartDesignsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarChartDesignsToolStripMenuItem.Click
+        dlgBarChartDesign.ShowDialog()
+    End Sub
 End Class

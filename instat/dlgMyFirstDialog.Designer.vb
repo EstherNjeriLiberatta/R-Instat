@@ -48,7 +48,7 @@ Partial Class dlgBarChartDesign
         Me.ucrColors.AddQuotesIfUnrecognised = True
         Me.ucrColors.GetSetSelectedIndex = -1
         Me.ucrColors.IsReadOnly = False
-        Me.ucrColors.Location = New System.Drawing.Point(203, 224)
+        Me.ucrColors.Location = New System.Drawing.Point(203, 223)
         Me.ucrColors.Name = "ucrColors"
         Me.ucrColors.Size = New System.Drawing.Size(137, 21)
         Me.ucrColors.TabIndex = 6
@@ -125,7 +125,7 @@ Partial Class dlgBarChartDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(424, 353)
+        Me.ClientSize = New System.Drawing.Size(423, 353)
         Me.Controls.Add(Me.grpBarChartType)
         Me.Controls.Add(Me.lblColour)
         Me.Controls.Add(Me.ucrDataSelectionVariables)

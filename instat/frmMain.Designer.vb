@@ -664,6 +664,7 @@ Partial Class frmMain
         Me.mnuDataFrameMetadata = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuScriptFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLogFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BarChartDesignsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.stsStrip.SuspendLayout()
         Me.Tool_strip.SuspendLayout()
         Me.mnuBar.SuspendLayout()
@@ -789,7 +790,7 @@ Partial Class frmMain
         '
         'mnuDescribeSpecific
         '
-        Me.mnuDescribeSpecific.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuDescribeSpecificFrequency, Me.mnuDescribeSpecificSummary, Me.mnuDescribeSpecificMultipleResponse, Me.ToolStripSeparator26, Me.mnuDescribeSpecificPointPlot, Me.mnuDescribeSpecificLinePlot, Me.mnuDescribeSpecificHistogramDensityFrequencyPlot, Me.mnuDescribeSpecificBoxplotJitterViolinPlot, Me.mnuDescribeSpecificDotPlot, Me.mnuDescribeSpecificRugPlot, Me.mnuDescribeSpecificBarPieChart, Me.mnuDescribeSpecificCummulativeDistribution, Me.mnuDescribeSpecificParallelCoordinatePlot, Me.mnuDescribeSpecificMosaic})
+        Me.mnuDescribeSpecific.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuDescribeSpecificFrequency, Me.mnuDescribeSpecificSummary, Me.mnuDescribeSpecificMultipleResponse, Me.ToolStripSeparator26, Me.mnuDescribeSpecificPointPlot, Me.mnuDescribeSpecificLinePlot, Me.mnuDescribeSpecificHistogramDensityFrequencyPlot, Me.mnuDescribeSpecificBoxplotJitterViolinPlot, Me.mnuDescribeSpecificDotPlot, Me.mnuDescribeSpecificRugPlot, Me.mnuDescribeSpecificBarPieChart, Me.mnuDescribeSpecificCummulativeDistribution, Me.mnuDescribeSpecificParallelCoordinatePlot, Me.mnuDescribeSpecificMosaic, Me.BarChartDesignsToolStripMenuItem})
         Me.mnuDescribeSpecific.Name = "mnuDescribeSpecific"
         resources.ApplyResources(Me.mnuDescribeSpecific, "mnuDescribeSpecific")
         Me.mnuDescribeSpecific.Tag = "Table_Dialogs"
@@ -4207,6 +4208,11 @@ Partial Class frmMain
         Me.mnuLogFile.Name = "mnuLogFile"
         resources.ApplyResources(Me.mnuLogFile, "mnuLogFile")
         '
+        'BarChartDesignsToolStripMenuItem
+        '
+        Me.BarChartDesignsToolStripMenuItem.Name = "BarChartDesignsToolStripMenuItem"
+        resources.ApplyResources(Me.BarChartDesignsToolStripMenuItem, "BarChartDesignsToolStripMenuItem")
+        '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
@@ -4878,4 +4884,5 @@ Partial Class frmMain
     Friend WithEvents mnuLastGraph As ToolStripSplitButton
     Friend WithEvents mnuViewer As ToolStripMenuItem
     Friend WithEvents mnuploty As ToolStripMenuItem
+    Friend WithEvents BarChartDesignsToolStripMenuItem As ToolStripMenuItem
 End Class
