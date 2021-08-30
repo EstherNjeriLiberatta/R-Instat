@@ -36,6 +36,17 @@ Public Class dlgReorderLevels
     Private Sub InitialiseDialog()
         ucrBase.iHelpTopicID = 36
 
+        ucrPnlReorderOptions.AddRadioButton(rdoHand)
+        ucrPnlReorderOptions.AddRadioButton(rdoProperty)
+        ucrPnlReorderOptions.AddRadioButton(rdoVariable)
+
+        ucrPnlReorderOptions.AddToLinkedControls({ucrChkReverseOrder}, {rdoProperty, rdoVariable}, bNewLinkedAddRemoveParameter:=True, bNewLinkedHideIfParameterMissing:=True)
+        ucrPnlReorderOptions.AddToLinkedControls({ucrReorderFactor}, {rdoHand}, bNewLinkedAddRemoveParameter:=True, bNewLinkedHideIfParameterMissing:=True)
+        ucrPnlReorderOptions.AddToLinkedControls({ucrReceiverVariable}, {rdoVariable}, bNewLinkedAddRemoveParameter:=True, bNewLinkedHideIfParameterMissing:=True)
+        ucrPnlReorderOptions.AddToLinkedControls({ucrInputSummary}, {rdoVariable}, bNewLinkedAddRemoveParameter:=True, bNewLinkedHideIfParameterMissing:=True)
+        'ucrChkReverseOrderProperty.SetLinkedDisplayControl(grpPropertyOptions)
+        ucrReceiverVariable.SetLinkedDisplayControl(lblVariable)
+        ucrInputSummary.SetLinkedDisplayControl(lblSummary)
         'Set data frame paramater
         ucrSelectorFactorLevelsToReorder.SetParameter(New RParameter("data_name", 0))
         ucrSelectorFactorLevelsToReorder.SetParameterIsString()
@@ -47,6 +58,9 @@ Public Class dlgReorderLevels
         ucrReceiverFactor.SetIncludedDataTypes({"factor"}, bStrict:=True)
         ucrReceiverFactor.strSelectorHeading = "Factors"
         ucrReceiverFactor.SetParameterIsString()
+
+        ucrNudShift.SetLinkedDisplayControl(lblShift)
+        ucrInputTextPrefix.SetLinkedDisplayControl(lblPrefix)
 
         'Set reorder scroll list view & datatype accepted
         ucrReorderFactor.SetParameter(New RParameter("new_level_names", 2))
@@ -83,5 +97,25 @@ Public Class dlgReorderLevels
 
     Private Sub Controls_ControlContentsChanged(ucrChangedControl As ucrCore) Handles ucrReceiverFactor.ControlContentsChanged
         TestOKEnabled()
+    End Sub
+
+    Private Sub rdoShift_CheckedChanged(sender As Object, e As EventArgs) Handles rdoShift.CheckedChanged, rdoAnonymise.CheckedChanged, rdoProperty.CheckedChanged
+        If rdoProperty.Checked Then
+            grpPropertyOptions.Visible = True
+            If rdoShift.Checked Then
+                ucrNudShift.Visible = True
+            Else
+                ucrNudShift.Visible = False
+            End If
+            If rdoAnonymise.Checked Then
+                ucrInputTextPrefix.Visible = True
+            Else
+                ucrInputTextPrefix.Visible = False
+            End If
+        Else
+            grpPropertyOptions.Visible = False
+            ucrInputTextPrefix.Visible = False
+            ucrNudShift.Visible = False
+        End If
     End Sub
 End Class
