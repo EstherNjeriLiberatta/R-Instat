@@ -17,7 +17,7 @@
 Imports instat.Translations
 Public Class dlgRugPlot
     Private clsRggplotFunction As New RFunction
-    Private clsRgeom_RugPlotFunction As New RFunction
+    Private clsRgeomRugPlotFunction As New RFunction
     Private clsRaesFunction As New RFunction
     Private bFirstLoad As Boolean = True
     Private clsBaseOperator As New ROperator
