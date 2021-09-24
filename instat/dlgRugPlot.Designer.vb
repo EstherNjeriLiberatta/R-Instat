@@ -15,7 +15,7 @@
 ' along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class dlgRugPlot
+Partial Class dlgHeatMapPlot
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -38,16 +38,14 @@ Partial Class dlgRugPlot
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dlgRugPlot))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dlgHeatMapPlot))
         Me.cmdOptions = New System.Windows.Forms.Button()
-        Me.cmdHeatMapOptions = New System.Windows.Forms.Button()
+        Me.cmdTileOptions = New System.Windows.Forms.Button()
         Me.lblXVariable = New System.Windows.Forms.Label()
         Me.lblFill = New System.Windows.Forms.Label()
         Me.lblPosition = New System.Windows.Forms.Label()
         Me.lblColour = New System.Windows.Forms.Label()
         Me.lblSize = New System.Windows.Forms.Label()
-        Me.lblVariableOptional = New System.Windows.Forms.Label()
-        Me.ucrReceiverPoints = New instat.ucrReceiverSingle()
         Me.ucrChkColourPalette = New instat.ucrCheck()
         Me.ucrInputColourPalette = New instat.ucrInputComboBox()
         Me.ucrInputSize = New instat.ucrInputComboBox()
@@ -60,10 +58,10 @@ Partial Class dlgRugPlot
         Me.ucrSaveGraph = New instat.ucrSave()
         Me.ucrHeatMapSelector = New instat.ucrSelectorByDataFrameAddRemove()
         Me.ucrBase = New instat.ucrButtons()
-        Me.ucrNudShape = New instat.ucrNud()
-        Me.grpBoxPoints = New System.Windows.Forms.GroupBox()
+        Me.lblPointsOptional = New System.Windows.Forms.Label()
         Me.lblPointsSize = New System.Windows.Forms.Label()
-        Me.grpBoxPoints.SuspendLayout()
+        Me.ucrReceiverPoints = New instat.ucrReceiverSingle()
+        Me.ucrNudShape = New instat.ucrNud()
         Me.SuspendLayout()
         '
         'cmdOptions
@@ -73,12 +71,12 @@ Partial Class dlgRugPlot
         Me.cmdOptions.Tag = "Options"
         Me.cmdOptions.UseVisualStyleBackColor = True
         '
-        'cmdHeatMapOptions
+        'cmdTileOptions
         '
-        resources.ApplyResources(Me.cmdHeatMapOptions, "cmdHeatMapOptions")
-        Me.cmdHeatMapOptions.Name = "cmdHeatMapOptions"
-        Me.cmdHeatMapOptions.Tag = "Heat_Map_Options"
-        Me.cmdHeatMapOptions.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.cmdTileOptions, "cmdTileOptions")
+        Me.cmdTileOptions.Name = "cmdTileOptions"
+        Me.cmdTileOptions.Tag = "Tile_Options"
+        Me.cmdTileOptions.UseVisualStyleBackColor = True
         '
         'lblXVariable
         '
@@ -106,21 +104,6 @@ Partial Class dlgRugPlot
         '
         resources.ApplyResources(Me.lblSize, "lblSize")
         Me.lblSize.Name = "lblSize"
-        '
-        'lblVariableOptional
-        '
-        resources.ApplyResources(Me.lblVariableOptional, "lblVariableOptional")
-        Me.lblVariableOptional.Name = "lblVariableOptional"
-        Me.lblVariableOptional.Tag = "X_Variable:"
-        '
-        'ucrReceiverPoints
-        '
-        Me.ucrReceiverPoints.frmParent = Me
-        resources.ApplyResources(Me.ucrReceiverPoints, "ucrReceiverPoints")
-        Me.ucrReceiverPoints.Name = "ucrReceiverPoints"
-        Me.ucrReceiverPoints.Selector = Nothing
-        Me.ucrReceiverPoints.strNcFilePath = ""
-        Me.ucrReceiverPoints.ucrSelector = Nothing
         '
         'ucrChkColourPalette
         '
@@ -212,6 +195,26 @@ Partial Class dlgRugPlot
         resources.ApplyResources(Me.ucrBase, "ucrBase")
         Me.ucrBase.Name = "ucrBase"
         '
+        'lblPointsOptional
+        '
+        resources.ApplyResources(Me.lblPointsOptional, "lblPointsOptional")
+        Me.lblPointsOptional.Name = "lblPointsOptional"
+        Me.lblPointsOptional.Tag = "Points_Optional"
+        '
+        'lblPointsSize
+        '
+        resources.ApplyResources(Me.lblPointsSize, "lblPointsSize")
+        Me.lblPointsSize.Name = "lblPointsSize"
+        '
+        'ucrReceiverPoints
+        '
+        Me.ucrReceiverPoints.frmParent = Me
+        resources.ApplyResources(Me.ucrReceiverPoints, "ucrReceiverPoints")
+        Me.ucrReceiverPoints.Name = "ucrReceiverPoints"
+        Me.ucrReceiverPoints.Selector = Nothing
+        Me.ucrReceiverPoints.strNcFilePath = ""
+        Me.ucrReceiverPoints.ucrSelector = Nothing
+        '
         'ucrNudShape
         '
         Me.ucrNudShape.DecimalPlaces = New Decimal(New Integer() {0, 0, 0, 0})
@@ -222,25 +225,14 @@ Partial Class dlgRugPlot
         Me.ucrNudShape.Name = "ucrNudShape"
         Me.ucrNudShape.Value = New Decimal(New Integer() {0, 0, 0, 0})
         '
-        'grpBoxPoints
-        '
-        Me.grpBoxPoints.Controls.Add(Me.lblPointsSize)
-        Me.grpBoxPoints.Controls.Add(Me.ucrReceiverPoints)
-        resources.ApplyResources(Me.grpBoxPoints, "grpBoxPoints")
-        Me.grpBoxPoints.Name = "grpBoxPoints"
-        Me.grpBoxPoints.TabStop = False
-        '
-        'lblPointsSize
-        '
-        resources.ApplyResources(Me.lblPointsSize, "lblPointsSize")
-        Me.lblPointsSize.Name = "lblPointsSize"
-        '
-        'dlgRugPlot
+        'dlgHeatMapPlot
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblPointsOptional)
+        Me.Controls.Add(Me.lblPointsSize)
+        Me.Controls.Add(Me.ucrReceiverPoints)
         Me.Controls.Add(Me.ucrNudShape)
-        Me.Controls.Add(Me.lblVariableOptional)
         Me.Controls.Add(Me.ucrChkColourPalette)
         Me.Controls.Add(Me.ucrInputColourPalette)
         Me.Controls.Add(Me.ucrInputSize)
@@ -257,22 +249,19 @@ Partial Class dlgRugPlot
         Me.Controls.Add(Me.ucrSaveGraph)
         Me.Controls.Add(Me.lblXVariable)
         Me.Controls.Add(Me.cmdOptions)
-        Me.Controls.Add(Me.cmdHeatMapOptions)
+        Me.Controls.Add(Me.cmdTileOptions)
         Me.Controls.Add(Me.ucrHeatMapSelector)
         Me.Controls.Add(Me.ucrBase)
-        Me.Controls.Add(Me.grpBoxPoints)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "dlgRugPlot"
-        Me.grpBoxPoints.ResumeLayout(False)
-        Me.grpBoxPoints.PerformLayout()
+        Me.Name = "dlgHeatMapPlot"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents cmdOptions As Button
-    Friend WithEvents cmdHeatMapOptions As Button
+    Friend WithEvents cmdTileOptions As Button
     Friend WithEvents ucrHeatMapSelector As ucrSelectorByDataFrameAddRemove
     Friend WithEvents ucrBase As ucrButtons
     Friend WithEvents ucrReceiverX As ucrReceiverSingle
@@ -290,9 +279,8 @@ Partial Class dlgRugPlot
     Friend WithEvents lblSize As Label
     Friend WithEvents ucrInputColourPalette As ucrInputComboBox
     Friend WithEvents ucrChkColourPalette As ucrCheck
-    Friend WithEvents ucrReceiverPoints As ucrReceiverSingle
-    Friend WithEvents lblVariableOptional As Label
-    Friend WithEvents ucrNudShape As ucrNud
-    Friend WithEvents grpBoxPoints As GroupBox
+    Friend WithEvents lblPointsOptional As Label
     Friend WithEvents lblPointsSize As Label
+    Friend WithEvents ucrReceiverPoints As ucrReceiverSingle
+    Friend WithEvents ucrNudShape As ucrNud
 End Class
